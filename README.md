@@ -1,70 +1,93 @@
-# Getting Started with Create React App
+# Attendance Manager
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Overview
+A React web application designed to help administrators manage local player attendance, review individual attendance histories, and summarize attendance over time. The application supports importing existing daily attendance records from CSV files.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+**Dashboard**
+- View attendance summaries and charts over a selected date range.
+- Review attendance trends by day or month.
 
-### `npm start`
+**Attendance**
+- View daily attendance records.
+- Filter records by date range.
+- Export attendance records to CSV.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+**Players**
+- Browse and search the player list.
+- Open individual player profiles.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+**Player Profiles**
+- Review an individual player's attendance history and related statistics.
 
-### `npm test`
+**CSV Imports**
+- Upload existing attendance CSV files.
+- Map CSV columns to the application's fields and preview the data before importing.
+- Append imported records to existing data or replace existing records.
+- Review import history and download previously imported CSV files.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Technologies
+- React
+- JavaScript
+- CSS
+- Browser localStorage
+- CSV file processing
 
-### `npm run build`
+## Data Storage
+The current version stores attendance records and import history in the browser using localStorage. Data is not automatically shared between devices or browsers.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+A future improvement is to connect the application to a database for centralized, longer-term storage.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Limitations and Future Improvements
+- **Daily attendance only:** Each player is tracked as attending or not attending on a given date. The application does not record multiple login and logout sessions for the same player on the same day.
+- **Local storage:** Data is stored in the browser rather than a centralized database. Clearing browser data may result in data loss, and records are not synchronized across devices.
+- **Responsive design:** The interface is designed for desktop and mobile use, but the mobile layout still needs further refinement and testing.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Running the Application
 
-### `npm run eject`
+Install dependencies:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```bash
+npm install
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Start the development server:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```bash
+npm start
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+The application will typically be available at `http://localhost:3000`.
 
-## Learn More
+## Screenshots
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Dashboard
+Shows attendance summaries and charts for the selected date range.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+<img width="1909" height="952" alt="image" src="https://github.com/user-attachments/assets/65dfda44-458f-4c06-9212-cd9b0e2611ee" />
+<img width="1912" height="561" alt="image" src="https://github.com/user-attachments/assets/c7a366e5-ac41-4e46-a69a-cb91bc766e13" />
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Attendance
+Displays daily attendance records and provides date filtering and CSV export.
 
-### Analyzing the Bundle Size
+<img width="1894" height="946" alt="image" src="https://github.com/user-attachments/assets/49eda9ac-d136-4105-a6a1-b4c1ba5bc082" />
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
+### Players
+Provides access to the player list and individual profiles.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+<img width="1905" height="950" alt="image" src="https://github.com/user-attachments/assets/3507bed6-9c5b-433a-bc00-185f9bc075a7" />
 
-### Advanced Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### Player Profile
+Shows an individual player's attendance history and statistics.
 
-### Deployment
+<img width="1900" height="940" alt="image" src="https://github.com/user-attachments/assets/ba0b8b4a-e792-480c-8e77-2d2d83ec6e02" />
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-### `npm run build` fails to minify
+### CSV Imports
+Supports CSV uploads, column mapping, data previews, and import history.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<img width="1913" height="945" alt="image" src="https://github.com/user-attachments/assets/6952ee40-d795-4124-8276-fa01ba049e96" />
