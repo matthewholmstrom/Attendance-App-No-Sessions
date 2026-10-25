@@ -669,7 +669,7 @@ function App() {
         <div className="chart-summary">
           <div>
             <span className="eyebrow">
-              {useMonthly ? "PLAYER-ATTENDANCE DAYS" : "UNIQUE ATTENDEES"}
+              {useMonthly ? "TOTAL ATTENDANCE" : "TOTAL ATTENDANCE"}
             </span>
             <strong>{totalPlayerDays.toLocaleString()}</strong>
           </div>
@@ -722,8 +722,8 @@ function App() {
         </div>
 
         <div className="chart-footnote">
-          Each player is counted once per date, regardless of duplicate rows.
-          Hover over a bar to see its date and count.
+          
+          Hover over a bar to see the date and attendance count.
         </div>
       </>
     );
@@ -896,7 +896,7 @@ function App() {
         )}
 
         <section className="panel">
-          <div className="panel-heading">
+          <div className="panel-heading csv">
             <div>
               <h2>Import history</h2>
               <p>Original CSV files and details of previous imports.</p>
@@ -1115,17 +1115,6 @@ function App() {
             onClick={() => setPage("imports")}
           />
         </nav>
-
-        <div className="sidebar-bottom">
-          <div className="local-status">
-            <span className="status-dot" />
-            <span>
-              <strong>Local data</strong>
-              <small>Saved in this browser</small>
-            </span>
-          </div>
-          <p>Attendance records are not synced to other devices.</p>
-        </div>
       </aside>
 
       <main className="main-area">

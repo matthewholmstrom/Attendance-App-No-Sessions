@@ -132,19 +132,19 @@ export default function PlayerProfile({
 
       <div className="stats-grid profile-stats">
         <StatCard
-          label="Attendance days"
+          label="Days Attended"
           value={dates.length}
-          detail="Distinct dates attended · all time"
+          detail="Total days attended."
           icon="▦"
         />
         <StatCard
           label="Attendance records"
           value={dates.length}
-          detail="One record per date · all time"
+          detail="Total attendance records."
           icon="▤"
         />
         <StatCard
-          label="First attended"
+          label="First day attended"
           value={
             dates.length
               ? formatDate(dates[0], {
@@ -157,7 +157,7 @@ export default function PlayerProfile({
           icon="◷"
         />
         <StatCard
-          label="Last attended"
+          label="Last day attended"
           value={
             dates.length
               ? formatDate(dates[dates.length - 1], {
@@ -176,7 +176,7 @@ export default function PlayerProfile({
       </div>
 
       <section className="panel">
-        <div className="panel-heading">
+        <div className="panel-heading player-profile">
           <div>
             <h2>Attendance history</h2>
             <p>

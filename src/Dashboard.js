@@ -118,15 +118,15 @@ export default function Dashboard({
 
       <div className="stats-grid">
         <StatCard
-          label="Player-attendance days"
-          value={filteredRecords.length}
-          detail="One record per player per date"
-          icon="▤"
-        />
+  label="Attendance records"
+  value={filteredRecords.length}
+  detail="Total records in this period"
+  icon="▤"
+/>
         <StatCard
           label="Players"
           value={playersInPeriod}
-          detail="Distinct player accounts"
+          detail="Total player accounts"
           icon="♙"
         />
         <StatCard
@@ -155,8 +155,8 @@ export default function Dashboard({
             <h2>Attendance Over Time</h2>
             <p>
               {chart.useMonthly
-                ? "Player-attendance days per month."
-                : "Unique players attending each day."}
+                ? "The number of players that attended per month."
+                : "The number of players that attended each day."}
             </p>
           </div>
           <span className="subtle-tag">
