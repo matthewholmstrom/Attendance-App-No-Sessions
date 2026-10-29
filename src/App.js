@@ -795,7 +795,7 @@ function App() {
 
         {fileData && (
           <section className="panel import-wizard">
-            <div className="panel-heading">
+            <div className="panel-heading import-review">
               <div>
                 <h2>Review import</h2>
                 <p>

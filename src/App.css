@@ -1303,7 +1303,11 @@ padding-right: 16px;
 padding-top: 16px;
 }
 
-
+.panel-heading.import-review{
+padding-left: 16px;
+padding-right: 16px;
+padding-top: 16px;
+}
 
 /* Responsive layout */
 
