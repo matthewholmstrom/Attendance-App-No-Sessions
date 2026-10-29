@@ -1289,6 +1289,22 @@ tbody tr:hover {
   font-size: 12px;
 }
 
+
+.panel-heading.csv{
+padding-left: 16px;
+padding-right: 16px;
+padding-top: 16px;
+}
+
+
+.panel-heading.player-profile{
+padding-left: 16px;
+padding-right: 16px;
+padding-top: 16px;
+}
+
+
+
 /* Responsive layout */
 
 @media (max-width: 1200px) {

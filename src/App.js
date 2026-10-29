@@ -721,8 +721,7 @@ function App() {
           ))}
         </div>
 
-        <div className="chart-footnote">
-          
+        <div className="chart-footnote"> 
           Hover over a bar to see the date and attendance count.
         </div>
       </>
