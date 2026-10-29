@@ -115,7 +115,20 @@ function parseCSV(text) {
 
   if (!rows.length) return { headers: [], rows: [] };
 
+
+
   const headers = rows[0].map((header) => normalizeValue(header));
+
+ const nonemptyHeaders = headers.filter(
+    (header) => header !== ""
+  );
+
+  if (nonemptyHeaders.length < 2) {
+    throw new Error(
+      "The first row of the CSV must contain at least two nonempty column headers separated by commas."
+    );
+  }
+
   const dataRows = rows.slice(1).map((cells) =>
     headers.map((_, index) => normalizeValue(cells[index]))
   );
@@ -496,34 +509,43 @@ function App() {
     setPage("player");
   }
 
-  async function handleFile(event) {
-    const file = event.target.files?.[0];
-    event.target.value = "";
-    if (!file) return;
 
-    try {
-      const text = await file.text();
-      const parsed = parseCSV(text);
+async function handleFile(event) {
+  const file = event.target.files?.[0];
+  event.target.value = "";
 
-      if (!parsed.headers.length) {
-        setImportError("The selected CSV file appears to be empty.");
-        setFileData(null);
-        return;
-      }
+  if (!file) return;
 
-      setFileData({
-        name: file.name,
-        originalCSV: text,
-        headers: parsed.headers,
-        rows: parsed.rows,
-      });
-      setMapping(guessMapping(parsed.headers));
-      setImportError("");
-    } catch {
-      setImportError("Could not read this file. Please select a CSV file.");
-      setFileData(null);
+  setImportError("");
+  setFileData(null);
+
+  try {
+    const text = await file.text();
+    const parsed = parseCSV(text);
+
+    if (!parsed.headers.length) {
+      setImportError(
+        "The selected CSV file appears to be empty."
+      );
+      return;
     }
+
+    setFileData({
+      name: file.name,
+      originalCSV: text,
+      headers: parsed.headers,
+      rows: parsed.rows,
+    });
+
+    setMapping(guessMapping(parsed.headers));
+  } catch (error) {
+    setImportError(
+      error.message ||
+        "Could not read this file. Please select a properly formatted CSV file."
+    );
   }
+}
+
 
   function commitImport() {
     if (!fileData) return;
