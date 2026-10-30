@@ -27,6 +27,10 @@ A React web application designed to help administrators manage local player atte
 - Append imported records to existing data or replace existing records.
 - Review import history and download previously imported CSV files.
 
+**Responsive Design**
+- Responsive layouts for desktop, tablet, and mobile devices.
+- Tested across various screen sizes to verify layout and usability.
+
 ## Technologies
 - React
 - JavaScript
@@ -37,12 +41,11 @@ A React web application designed to help administrators manage local player atte
 ## Data Storage
 The current version stores attendance records and import history in the browser using localStorage. Data is not automatically shared between devices or browsers.
 
-A future improvement is to connect the application to a database for centralized, longer-term storage.
+Long term storage handling is currently in progress.
 
 ## Limitations and Future Improvements
 - **Daily attendance only:** Each player is tracked as attending or not attending on a given date. The application does not record multiple login and logout sessions for the same player on the same day.
 - **Local storage:** Data is stored in the browser rather than a centralized database. Clearing browser data may result in data loss, and records are not synchronized across devices.
-- **Responsive design:** The interface is designed for desktop and mobile use, but the mobile layout still needs further refinement and testing.
 
 ## Running the Application
 

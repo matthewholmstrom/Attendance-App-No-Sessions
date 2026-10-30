@@ -556,7 +556,7 @@ async function handleFile(event) {
 }
 
 
-  function commitImport() {
+  async function commitImport() {
     if (!fileData) return;
 
     const hasUsername = Number.isInteger(mapping.username) && mapping.username >= 0;
