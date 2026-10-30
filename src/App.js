@@ -143,11 +143,20 @@ function guessMapping(headers) {
     return normalized.findIndex((header) =>
       terms.some((term) => header === term || header.includes(term))
     );
+
   }
+    function findNameIndex() {
+    return (
+      findIndex(["realname", "fullname", "playername", "displayname"]) !== -1
+        ? findIndex(["realname", "fullname", "playername", "displayname"])
+        : findIndex(["name"])
+    );
+  }
+
 
   return {
     username: findIndex(["username", "userid", "user", "playerusername", "account"]),
-    realName: findIndex(["realname", "fullname", "playername", "name"]),
+    realName: findNameIndex(),
     date: findIndex(["attendancedate", "date", "day", "attendedon"]),
     notes: findIndex(["notes", "note", "comments", "comment"]),
   };
